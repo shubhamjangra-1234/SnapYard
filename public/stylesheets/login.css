@@ -90,3 +90,9 @@ a {
 a:hover {
     text-decoration: underline;
 }
+@media screen and (max-width: 768px) {
+    .side-container
+    {
+        display: none;
+    }
+}

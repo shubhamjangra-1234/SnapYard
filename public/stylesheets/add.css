@@ -49,3 +49,83 @@ input[type="submit"] {
 input[type="submit"]:hover {
     background-color: #45a049;
 }
+/* Navbar styles */
+
+.navbar {
+  
+    color: white;
+    padding: 10px 0;
+  }
+  .search{
+    padding: 10px 10px 10px 10px ;
+    background-color:whitesmoke;
+    border-radius: 25px;
+    border: none;
+  }
+  .search:hover{
+    box-shadow: 0px 0px 5px white;
+  }
+  .srch
+  {
+    display:flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-wrap: wrap;
+    width:280px;
+    
+  }
+
+  .srch i
+  {
+    font-size: x-large;
+  }
+  .navbar-logo img {
+    height: 80px;
+    margin-left:10px ;
+    border-radius: 50%;
+  }
+  
+  .navbar-links a {
+    color: white;
+    text-decoration: none;
+    margin-right: 20px;
+    font-weight: bolder;
+    font-size: larger; 
+  }
+  
+  .navbar-toggle {
+    display: none; /* Hide toggle by default */
+  }
+  
+  /* Responsive styles */
+  @media screen and (max-width: 768px) {
+    .container {
+      flex-direction: column;
+    }
+    .navbar-links
+    {
+      margin-top: 10px; /* Adjust spacing between links */
+    }
+    
+    .icon
+    {
+      height:15px;
+      position: absolute;
+      right:5%;
+      width:15px;
+      font-size: larger;
+    }
+    .navbar-toggle {
+      display: block;
+      cursor: pointer;
+    }
+  
+    .navbar-toggle span {
+      display: block;
+      width: 25px;
+      height: 3px;
+      background-color: white;
+      margin: 5px 0;
+    }
+  }
+  

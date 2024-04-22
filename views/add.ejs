@@ -1,13 +1,28 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Image Upload Form</title>
     <link href="/stylesheets/add.css" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/172918fa27.js" crossorigin="anonymous"></script>
 </head>
 <body>
-    <div class="container">
+    <nav class="navbar">
+        <div class="navbar-logo">
+          <img src="/images/snap yard.png" alt="Logo">
+        </div>
+        <div id="nav" class="navbar-links">
+          <a href="/profile">Profile</a>
+          <a href="/feed">feed</a>
+          <a href="/" class="btn btn-danger ">logout</a>
+        </div>
+        </div>
+        </div>
+      </nav> -->
+      <%- include partials/header.ejs%>
+
+    <div class="posts">
         <h2>Upload Image</h2>
         <form action="newPost" method="post" enctype="multipart/form-data">
             <div class="form-group">
@@ -25,5 +40,6 @@
             <input type="submit" value="Upload">
         </form>
     </div>
+   
 </body>
 </html>
