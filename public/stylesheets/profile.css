@@ -1,26 +1,109 @@
 body {
   font-family: Arial, sans-serif;
-  background-color: #3ca8f5;
+  /* background-color: #3ca8f5; */
   margin: 0;
     padding: 0;
   }
- 
+  
+  .btn a
+  {
+    background-color: rgb(230, 54, 54);
+    color:white;
+    font:bolder;
+    border: none;
+    text-decoration: none;
+    font-size: larger;
+  }
   .container {
-    width:80%;
+    width:100%;
     display: flex;
     justify-content: center;
     align-items: center;
+    /* background-color: black; */
     /* max-width:200px; */
     /* margin: auto auto; */
     /* padding: 10px 10px; */
     /* background-color: #13c7c7; */
   }
+  /* Basic reset */
+* {
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+}
+
+body {
+font-family: Arial, sans-serif;
+background-color: #f4f4f4;
+color: #333;
+line-height: 1.6;
+}
+
+#container {
+width: 90%;
+margin: auto;
+height:50px;
+font-size: larger;
+overflow: hidden;
+}
+.feed {
+width: 50%;
+max-width: 600px;
+margin: auto;
+display: flex;
+background-color: #333;
+flex-wrap: wrap;
+overflow: hidden;
+}
+
+header {
+background: #4285b7;
+color: #fff;
+padding: 1rem 0;
+height:fit-content;
+}
+
+header h1 {
+float: left;
+margin: 0;
+font-weight: bolder;
+}
+
+header nav {
+float: right;
+margin-top: 10px;
+}
+
+header nav ul {
+list-style: none;
+}
+
+header nav ul li {
+display: inline;
+margin-left: 20px;
+}
+
+header nav ul li a {
+color: #fff;
+text-decoration: none;
+font-weight: bold;
+}
+
+header nav ul li a:hover {
+text-decoration: underline;
+}
+
+main {
+padding: 20px 0;
+}
+
   .uploads {
-    max-width: 90%;
-    margin: 0 auto;
+    max-width:100%;
+    margin-top: auto;
     padding: 10px 10px;
     display:flex;
     flex: 1;
+    /* background-color: #45a049; */
     justify-content:center;
     flex-wrap: wrap;
     gap:20px;
@@ -35,10 +118,8 @@ body {
     width:120px;
     border-radius: 10px;
   }
-  .flex{
-    max-width:80%;
-
-    height: fit-content;
+   #cards{
+    width:80%;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -48,23 +129,25 @@ body {
   h6{
     font-size:small;
   }
-  .card-title
-  {
-    text-decoration: none;
-    font-size: smaller;
-  }
-  .card {
-    max-width: 150px;
-    max-height:250px;
+  
+  #card {
+    width: 250px;
+    margin:10px;
+    height:300px;
     overflow: hidden;
-    object-fit: cover;
     background-size: cover ;
     background-color:white;
     border-radius: 5px;
     padding: 10px 10px ;
     text-align: center;
-    border: none;
     box-shadow: 0px 0px 10px rgb(0, 4, 5);
+    background-size: cover;
+  }
+  #card img
+  {
+    width: 100%;
+    /* object-fit: cover; */
+    height:100%;
   }
   .profile {
     background-color: #fdfdfd;
@@ -286,17 +369,38 @@ input[type="submit"]:hover {
 .navbar-toggle {
   display: none; /* Hide toggle by default */
 }
+.footer {
+  background: #333;
+  color: #fff;
+  text-align: center;
+  padding: 1rem 0;
+  position:absolute;
+  bottom:0px;
+  width:100%;
 
-/* Responsive styles */
+}
+
+@media (max-width: 768px) { 
+   header h1{
+    display:none
+   } 
+   nav{
+     width:100%;
+   }
+ header nav ul {
+    padding: 10px ;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+
+  }
+ 
+}  
 @media screen and (max-width: 768px) {
   .container {
     flex-direction: column;
   }
-  .navbar-links
-  {
-    margin-top: 10px; /* Adjust spacing between links */
-  }
-  
+ 
   .icon
   {
     height:15px;
@@ -316,5 +420,25 @@ input[type="submit"]:hover {
     height: 3px;
     background-color: white;
     margin: 5px 0;
+  }
+ 
+  /* .posts
+  {
+    width:200px;
+    background-color: #007bff; 
+  } */
+  #card
+  {
+    height:250px;
+    width:200px;
+    background-size: cover;
+    /* object-fit: cover; */
+  }
+  #card img 
+  {
+    height:100%;
+    width:100%;
+    /* object-fit: cover; */
   }  
+
 }

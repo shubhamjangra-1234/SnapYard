@@ -34,7 +34,7 @@ router.get("/show/posts", isLoggedIn,async function (req, res,next) {
 });
 router.get("/feed", isLoggedIn,async function (req, res,next) {
   const user = await userModel.findOne({username:req.session.passport.user})
-   const posts = await postModel.find().populate("user");
+   var posts = await postModel.find().populate("user");
   res.render("feed",{user,posts});
 });
 router.get("/add", isLoggedIn,async function (req, res,next) {
@@ -66,7 +66,7 @@ router.post("/register", function (req, res) {
     .register(userData, req.body.password)
     .then(function () {
       passport.authenticate("local")(req, res, function () {
-        res.redirect("/profile");
+        res.redirect("/feed");
       });
     });
 });
@@ -74,7 +74,7 @@ router.post("/register", function (req, res) {
 router.post(
   "/login",
   passport.authenticate("local", {
-    successRedirect: "/profile",
+    successRedirect: "/feed",
     failureRedirect: "/login",
     failureFlash: true,
   }),
@@ -104,7 +104,7 @@ router.post('/fileUpload',isLoggedIn,upload.single('image'),async function (req,
   const user = await userModel.findOne({username:req.session.passport.user});
    user.profileImage = req.file.filename;
  await user.save();
- res.redirect("/profile");
+ res.redirect("/feed");
 })
 router.get("/:username", function (req, res) {
   res.send(`${req.params.username} page is not built yet`);
